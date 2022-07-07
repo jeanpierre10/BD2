@@ -1,0 +1,71 @@
+use Personal
+db.createCollection(Persona)
+db.Persona.insertMany([
+{
+    "registro" : ISODate("2017-07-15"),
+    "nombre" : "Juan",
+    "edad" : 32,
+    "cumplea�os" : ISODate("1982-01-15")
+},
+{
+    "registro" : ISODate("2017-08-11"),
+    "nombre" : "Juan",
+    "edad" : 25,
+    "cumplea�os" : ISODate("1993-12-21")
+},
+{
+    "registro" : ISODate("2010-10-16"),
+    "nombre" : "Juan",
+    "edad" : 34,
+    "cumplea�os" : ISODate("1990-12-16")
+}
+{
+    "registro" : ISODate("2017-10-30"),
+    "nombre" : "Pablo",
+    "edad" : 40,
+    "cumplea�os" : ISODate("1978-11-13")
+},
+{
+    "registro" : ISODate("2017-11-21"),
+    "nombre" : "Luisa",
+    "edad" : 22,
+    "cumplea�os" : ISODate("1996-04-10")
+},
+{
+    "registro" : ISODate("2017-11-23"),
+    "nombre" : "Carmen",
+    "edad" : 24,
+    "cumplea�os" : ISODate("1994-05-13")
+},
+{
+    "registro" : ISODate("2017-11-29"),
+    "nombre" : "Rosa",
+    "edad" : 29,
+    "cumplea�os" : ISODate("1989-02-22")
+}])
+db.getCollection('Persona').find({})
+
+db.Persona.insertMany([
+{
+    "registro" : ISODate("2022-03-18"),
+    "nombre" : "Jean",
+    "edad" : 26,
+    "cumplea�os" : ISODate("1996-01-14")
+},
+{
+    "registro" : ISODate("2010-06-05"),
+    "nombre" : "Domenica",
+    "edad" : 25,
+    "cumplea�os" : ISODate("1989-02-22")
+},
+{
+    "registro" : ISODate("2018-11-29"),
+    "nombre" : "Marvel",
+    "edad" : 23,
+    "cumplea�os" : ISODate("1999-04-10")
+}
+])
+
+db.getCollection('Persona').find({})
+
+db.Persona.update({"_id": ObjectId("62c6569c25da731ad7196480")},{"$unset":{"salario":""}})
